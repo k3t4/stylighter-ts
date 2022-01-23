@@ -2,6 +2,7 @@
 	"name": "ts-stylighter",
 	"displayName": "Stylighter (TS)",
 	"description": "JSX styled-components syntax highlighter",
+  "icon": "images/stylighter-ts-logo.png",
 	"version": "1.0.0",
 	"engines": {
 		"vscode": "^1.63.0"
