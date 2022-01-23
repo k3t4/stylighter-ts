@@ -1,0 +1,94 @@
+{
+	"name": "ts-stylighter",
+	"displayName": "Stylighter (TS)",
+	"description": "JSX styled-components syntax highlighter",
+	"version": "0.1.0",
+	"engines": {
+		"vscode": "^1.63.0"
+	},
+	"publisher": "ketch",
+	"categories": [
+		"Programming Languages"
+	],
+	"keywords": [
+		"highlight styled components",
+		"styled components highlight",
+		"styled components highlighter",
+		"styled components syntax highlighting",
+		"styled components syntax highlighter"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "typescriptreact",
+				"aliases": [
+					"TypeScript React",
+					"tsx"
+				],
+				"extensions": [
+					".tsx"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"path": "./syntaxes/injection.json",
+				"language": "typescriptreact",
+				"scopeName": "source.tsx",
+				"embeddedLanguages": {
+					"meta.tag.tsx": "jsx-tags",
+					"meta.tag.without-attributes.tsx": "jsx-tags",
+					"meta.tag.attributes.tsx": "typescriptreact",
+					"meta.embedded.expression.tsx": "typescriptreact"
+				},
+				"tokenTypes": {
+					"meta.template.expression": "other",
+					"meta.template.expression string": "string",
+					"meta.template.expression comment": "comment",
+					"entity.name.type.instance.jsdoc": "other",
+					"entity.name.function.tagged-template": "other",
+					"meta.import string.quoted": "other",
+					"variable.other.jsdoc": "other"
+				}
+			}
+		],
+		"semanticTokenScopes": [
+			{
+				"language": "typescriptreact",
+				"scopes": {
+					"property": [
+						"variable.other.property.tsx"
+					],
+					"property.readonly": [
+						"variable.other.constant.property.tsx"
+					],
+					"variable": [
+						"variable.other.readwrite.tsx"
+					],
+					"variable.readonly": [
+						"variable.other.constant.object.tsx"
+					],
+					"function": [
+						"entity.name.function.tsx"
+					],
+					"namespace": [
+						"entity.name.type.module.tsx"
+					],
+					"variable.defaultLibrary": [
+						"support.variable.tsx"
+					],
+					"function.defaultLibrary": [
+						"support.function.tsx"
+					]
+				}
+			}
+		],
+		"snippets": [
+			{
+				"language": "typescriptreact",
+				"path": "./snippets/typescript.code-snippets"
+			}
+		]
+	}
+}
